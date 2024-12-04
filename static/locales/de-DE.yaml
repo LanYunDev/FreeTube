@@ -272,8 +272,8 @@ Settings:
   Settings: Einstellungen
   General Settings:
     General Settings: Allgemein
-    Fallback to Non-Preferred Backend on Failure: Falle zu nicht-präferiertem System
-      bei Fehlschlag zurück
+    Fallback to Non-Preferred Backend on Failure: Zum nicht bevorzugten Backend System
+      bei Fehlschlag zurückkehren
     Enable Search Suggestions: Suchvorschläge aktivieren
     Default Landing Page: Standard Startseite
 
@@ -296,7 +296,7 @@ Settings:
       Blur: Unschärfe
     Region for Trending: Region für Trends
         #! List countries
-    Check for Latest Blog Posts: Nach aktuellsten Blogeinträgen suchen
+    Check for Latest Blog Posts: Nach neuesten Blogeinträgen suchen
     Check for Updates: Auf Aktualisierungen prüfen
     View all Invidious instance information: Alle Informationen zur Invidious-Instanz
       anzeigen
@@ -317,6 +317,8 @@ Settings:
     Auto Load Next Page:
       Label: Nächste Seite automatisch laden
       Tooltip: Zusätzliche Seiten und Kommentare automatisch laden.
+    Open Deep Links In New Window: URLs die an FreeTube übergeben werden in einem
+      neuen Fenster öffnen
   Theme Settings:
     Theme Settings: Farbschema
     Match Top Bar with Main Color: Obere Leiste an Hauptfarbe anpassen
@@ -557,9 +559,9 @@ Settings:
     Hide Channels Placeholder: Kanal-ID
     Display Titles Without Excessive Capitalisation: Titel ohne übermäßige Großschreibung
       und Zeichensetzung anzeigen
-    Hide Channel Playlists: Kanal-Wiedergabelisten ausblenden
-    Hide Channel Community: Kanal-Gemeinschaft ausblenden
-    Hide Channel Shorts: Kanal-Kurzvideos ausblenden
+    Hide Channel Playlists: 'Tab „Wiedergabelisten“ des Kanals ausblenden'
+    Hide Channel Community: 'Tab „Gemeinschaft“ des Kanals ausblenden'
+    Hide Channel Shorts: 'Tab „Kurzvideos“ des Kanals ausblenden'
     Hide Featured Channels: Hervorgehobene Kanäle ausblenden
     Sections:
       Side Bar: Seitenleiste
@@ -567,11 +569,11 @@ Settings:
       General: Allgemein
       Watch Page: Seite beobachten
       Subscriptions Page: Abos-Seite
-    Hide Channel Podcasts: Kanal-Podcasts ausblenden
+    Hide Channel Podcasts: 'Tab „Podcasts“ des Kanals ausblenden'
     Hide Subscriptions Videos: Abo-Videos ausblenden
     Hide Subscriptions Shorts: Abo-Kurzvideos ausblenden
-    Hide Channel Releases: Kanalveröffentlichungen ausblenden
-    Hide Subscriptions Live: Live der Abos ausblenden
+    Hide Channel Releases: 'Tab „Veröffentlichungen“ des Kanals ausblenden'
+    Hide Subscriptions Live: Abo-Live ausblenden
     Hide Profile Pictures in Comments: Profilbilder in den Kommentaren ausblenden
     Hide Subscriptions Community: Abo-Gemeinschaft ausblenden
     Hide Channels Invalid: Kanal-ID war ungültig
@@ -580,11 +582,11 @@ Settings:
     Hide Channels Already Exists: Kanal-ID bereits vorhanden
     Hide Channels API Error: Fehler beim Abrufen von Benutzern mit der bereitgestellten
       ID. Bitte überprüfen Sie erneut, ob der Ausweis korrekt ist.
-    Hide Videos and Playlists Containing Text: Videos und Playlisten verstecken, die
-      Text enthalten
-    Hide Videos and Playlists Containing Text Placeholder: Wort, Teil eines Wortes
-      oder Satz
-    Hide Channel Home: Kanal-Startseite ausblenden
+    Hide Videos and Playlists Containing Text: Videos und Wiedergabelisten, die Text
+      enthalten, ausblenden
+    Hide Videos and Playlists Containing Text Placeholder: Wort, Wortfragment oder
+      Phrase
+    Hide Channel Home: 'Tab „Startseite“ des Kanals ausblenden'
   The app needs to restart for changes to take effect. Restart and apply change?: Die
     App muss neu gestartet werden, damit die Änderungen wirksam werden. Neu starten
     und Änderung übernehmen?
@@ -624,7 +626,7 @@ Settings:
       Do Nothing: Nichts tun
     Category Color: Kategoriefarbe
     UseDeArrowTitles: DeArrow-Videotitel verwenden
-    UseDeArrowThumbnails: Nutze DeArrow für Thumbnails
+    UseDeArrowThumbnails: DeArrow für Thumbnails verwenden
     'DeArrow Thumbnail Generator API Url (Default is https://dearrow-thumb.ajay.app)': DeArrow
       Thumbnail Generator API URL (Standard ist https://dearrow-thumb.ajay.app)
   External Player Settings:
@@ -637,7 +639,7 @@ Settings:
     Players:
       None:
         Name: Keine
-    Ignore Default Arguments: Ignoriere Standardargument
+    Ignore Default Arguments: Standardargument ignorieren
   Download Settings:
     Download Settings: Herunterladen
     Ask Download Path: Nach dem Herunterladepfad fragen
@@ -667,7 +669,7 @@ Settings:
     Set Password To Prevent Access: Passwort festlegen, um den Zugriff auf die Einstellungen
       zu verhindern
     Set Password: Passwort festlegen
-  Sort Settings Sections (A-Z): Einstellungsbereiche sortieren (A-Z)
+  Sort Settings Sections (A-Z): Die Einstellungen von A bis Z sortieren
   Return to Settings Menu: Zurück zum Einstellungsmenü
 About:
   #On About page
@@ -884,7 +886,7 @@ Video:
       CodecsVideoAudioNoItags: 'Codecs: {videoCodec} / {audioCodec}'
     You appear to be offline: Sie scheinen offline zu sein.
     Playback will resume automatically when your connection comes back: Die Wiedergabe
-      wird automatisch wieder aufgenommen, wenn Ihre Verbindung zurückkommt.
+      startet automatisch, sobald deine Verbindung wieder da ist.
     Skipped segment: 'Segment {segmentCategory} übersprungen'
     TranslatedCaptionTemplate: '{language} (übersetzt von {originalLanguage})'
     Exit Full Window: Vollständiges Fenster beenden
@@ -898,6 +900,9 @@ Video:
   AgeRestricted: Videos mit Altersbeschränkung können mit FreeTube nicht angesehen
     werden, da sie eine Google-Anmeldung und die Verwendung eines altersgeprüften
     YouTube-Kontos erfordern.
+  DeArrow:
+    Show Modified Details: Geänderte Details anzeigen
+    Show Original Details: Originaldetails anzeigen
 Videos:
   #& Sort By
   Sort By:
@@ -1083,6 +1088,9 @@ Tooltips:
     External Link Handling: "Wähle das Standardverhalten, wenn ein Link angeklickt
       wird, der nicht in FreeTube geöffnet werden kann.\nStandardmäßig wird FreeTube
       den angeklickten Link in deinem Standardbrowser öffnen.\n"
+    Open Deep Links In New Window: URLs die an FreeTube übergeben werden, z. B. durch
+      Redirect-Browser-Erweiterungen oder Befehlszeilenargumente, werden in einem
+      neuen Fenster geöffnet.
   Subscription Settings:
     Fetch Feeds from RSS: Wenn aktiviert, verwendet FreeTube RSS anstelle der Standardmethode,
       um deinen Abo-Feed abzurufen. RSS ist schneller und verhindert die IP-Blockierung,
@@ -1107,8 +1115,7 @@ Tooltips:
       zu springen, MPV-Stil.
   External Player Settings:
     Custom External Player Arguments: Alle benutzerdefinierten Befehlszeilenargumente,
-      getrennt durch Semikolon (';'), die an den externen Abspieler übergeben werden
-      sollen.
+      die an den externen Abspieler übergeben werden sollen.
     Ignore Warnings: Warnungen unterdrücken, wenn der aktuelle externe Abspieler die
       aktuelle Aktion nicht unterstützt (z. B. das Umkehren von Wiedergabelisten usw.).
     Custom External Player Executable: Standardmäßig wird FreeTube annehmen, dass
@@ -1142,7 +1149,7 @@ Tooltips:
   SponsorBlock Settings:
     UseDeArrowTitles: Videotitel durch von Benutzern eingereichte Titel von DeArrow
       ersetzen.
-    UseDeArrowThumbnails: Ersetze Video-Thumbnails mit Thumbnails von DeArrow.
+    UseDeArrowThumbnails: Video-Thumbnails durch Thumbnails von DeArrow ersetzen.
 Playing Next Video Interval: Nächstes Video wird sofort abgespielt. Zum Abbrechen
   klicken. | Nächstes Video wird in {nextVideoInterval} Sekunden abgespielt. Zum Abbrechen
   klicken. | Nächstes Video wird in {nextVideoInterval} Sekunden abgespielt. Zum Abbrechen
@@ -1216,7 +1223,7 @@ Feed:
 Yes, Delete: Ja, löschen
 Cancel: Abbrechen
 Search character limit: Die Suche ist länger als das {searchCharacterLimit}-Zeichen-Limit
-Yes, Restart: Ja, neustarten
+Yes, Restart: Ja, neu starten
 Yes, Open Link: Ja, Link öffnen
 Search Listing:
   Label:
