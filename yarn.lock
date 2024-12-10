@@ -5832,10 +5832,10 @@ jest-worker@^29.7.0:
     merge-stream "^2.0.0"
     supports-color "^8.0.0"
 
-jintr@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/jintr/-/jintr-3.0.2.tgz#633ecc8da930d25f5004697acb5af4ff36628f26"
-  integrity sha512-5g2EBudeJFOopjAX4exAv5OCCW1DgUISfoioCsm1h9Q9HJ41LmnZ6J52PCsqBlQihsmp0VDuxreAVzM7yk5nFA==
+jintr@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/jintr/-/jintr-3.1.0.tgz#5d4ec7ba695dfae3cc3f487545939a4ed1ad69b8"
+  integrity sha512-azhCHApkRfBH8INpiUCwKBYaNCdB5G+x3NApsI2MxQXSlgFAx7rap3YwE3JAkN08GO8f3ilZsGB0Yvc+412ntQ==
   dependencies:
     acorn "^8.8.0"
 
@@ -7963,10 +7963,10 @@ sanitize-filename@^1.6.3:
   dependencies:
     truncate-utf8-bytes "^1.0.0"
 
-sass-loader@^16.0.3:
-  version "16.0.3"
-  resolved "https://registry.yarnpkg.com/sass-loader/-/sass-loader-16.0.3.tgz#17b944fab6702dc7a52c5d2a88cbfa38c39cdc75"
-  integrity sha512-gosNorT1RCkuCMyihv6FBRR7BMV06oKRAs+l4UMp1mlcVg9rWN6KMmUj3igjQwmYys4mDP3etEYJgiHRbgHCHA==
+sass-loader@^16.0.4:
+  version "16.0.4"
+  resolved "https://registry.yarnpkg.com/sass-loader/-/sass-loader-16.0.4.tgz#5c2afb755fbc0a45a004369efa11579518a39a45"
+  integrity sha512-LavLbgbBGUt3wCiYzhuLLu65+fWXaXLmq7YxivLhEqmiupCFZ5sKUAipK3do6V80YSU0jvSxNhEdT13IXNr3rg==
   dependencies:
     neo-async "^2.6.2"
 
@@ -8169,10 +8169,10 @@ setprototypeof@1.2.0:
   resolved "https://registry.yarnpkg.com/setprototypeof/-/setprototypeof-1.2.0.tgz#66c9a24a73f9fc28cbe66b09fed3d33dcaf1b424"
   integrity sha512-E5LDX7Wrp85Kil5bhZv46j8jOeboKq5JMmYM3gVGdGH8xFpPWXUMsNrlODCrkoxMEeNi/XZIwuRvY4XNwYMJpw==
 
-shaka-player@^4.12.3:
-  version "4.12.3"
-  resolved "https://registry.yarnpkg.com/shaka-player/-/shaka-player-4.12.3.tgz#f807e75d4ea699ea4e2d476962c13fc56d76bca3"
-  integrity sha512-7lmRM/5YOCXP5SLm2y49D/7t59mM8kSmkqjIrhqi0BQWjEnZCZVvhicz/akJvJAvgNG+WCF1zkLuiKo8YtNdGw==
+shaka-player@^4.12.4:
+  version "4.12.4"
+  resolved "https://registry.yarnpkg.com/shaka-player/-/shaka-player-4.12.4.tgz#a22810763f36c7c3313545d4329420b520e6bda2"
+  integrity sha512-r3008gwhjgVZwLCpY8mT/OxLZQcJoqUKptKw7drsB8hV4lf1NhbTXxoNcM83lTS90iNMw2SXvk7vCLxyV/Uscw==
   dependencies:
     eme-encryption-scheme-polyfill "^2.1.6"
 
@@ -9643,12 +9643,12 @@ yocto-queue@^1.0.0:
   resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-1.0.0.tgz#7f816433fb2cbc511ec8bf7d263c3b58a1a3c251"
   integrity sha512-9bnSc/HEW2uRy67wc+T8UwauLuPJVn28jb+GtJY16iiKWyvmYJRXVT4UamsAEGQfPohgr2q4Tq0sQbQlxTfi1g==
 
-youtubei.js@^11.0.1:
-  version "11.0.1"
-  resolved "https://registry.yarnpkg.com/youtubei.js/-/youtubei.js-11.0.1.tgz#5729bbf2df8dff58c3555140d23ae83c458f0b34"
-  integrity sha512-ZsbOd+5XF2Ofi3FrLMfYd+f9g9H8xswlouFhjhOqbwT68dMJtX6CRGsHNj5VTFCR/+L/865x1lnUlllB2dDDTA==
+youtubei.js@^12.0.0:
+  version "12.0.0"
+  resolved "https://registry.yarnpkg.com/youtubei.js/-/youtubei.js-12.0.0.tgz#a36159918bf3e255a052d42afc9ca9c0f8c82a8c"
+  integrity sha512-pGmVb1I9b2gseqmuMx+BCajzVUi04+r+8zxj4Fk/iQaGQGvBCbY87Tu9mdvEgIQYTkkb4Fza7GZGrH9AjYNbrw==
   dependencies:
     "@bufbuild/protobuf" "^2.0.0"
-    jintr "^3.0.2"
+    jintr "^3.1.0"
     tslib "^2.5.0"
     undici "^5.19.1"
