@@ -569,7 +569,7 @@ Settings:
     Hide Channels Invalid: Podane ID kanału jest niepoprawne
     Hide Channels Disabled Message: Niektóre z kanałów nie zostały przetworzone, ponieważ
       zostały zablokowane po swoim ID. Funkcja jest zablokowana, aż do momentu, w
-      którym zostaną one zaktualizowane.
+      którym zostaną one zaktualizowane
     Hide Channels Already Exists: To ID kanału już jest
     Hide Channels API Error: Nie udało się wyszukać użytkownika po podanym ID. Proszę
       sprawdzić, czy wpisane ID jest poprawne.
@@ -578,6 +578,7 @@ Settings:
     Hide Videos and Playlists Containing Text Placeholder: Słowo, fragment słowa,
       lub wyrażenie
     Hide Channel Home: Schowaj kartę kanału „Główna”
+    Show Added Items: Pokaż dodane rzeczy
   The app needs to restart for changes to take effect. Restart and apply change?: Aplikacja
     musi zostać ponownie uruchomiona, aby zmiany zostały wprowadzone. Uruchomić ponownie
     i zastosować zmiany?
@@ -1221,6 +1222,9 @@ Keys:
   arrowdown: Strzałka w dół
   alt: Alt
   ctrl: Ctrl
+  enter: Enter
+  plus: Plus
+  shift: Shift
 Right-click or hold to see history: Kliknij prawym lub przytrzymaj, by zobaczyć historię
 shortcutJoinOperator: +
 KeyboardShortcutTemplate: '{label} ({shortcut})'
@@ -1229,3 +1233,21 @@ Autoplay Interruption Timer: Automatyczne odtwarzanie zostało anulowane, z powo
 Description:
   Expand Description: '...więcej'
   Collapse Description: Zwiń
+KeyboardShortcutPrompt:
+  Keyboard Shortcuts: Skróty
+  Sections:
+    Video:
+      Playback: Filmy: Odtwarzanie
+      General: Filmy: Ogólne
+    App:
+      Situational: 'Aplikacja: Kontekstowe'
+      General: Aplikacja: Ogólne
+  New Window: Otwórz nowe okno
+  Navigate to Settings: Przejdź do strony Ustawień
+  Navigate to History: Przejdź do strony Historii
+  Focus Secondary Search: Przełącz na drugi pasek wyszukiwania (jeżeli dostępny)
+  Captions: Przełącz napisy WŁĄCZ/WYŁĄCZ
+  Show Keyboard Shortcuts: Pokaż skróty
+  History Forward: Dalej jedną stronę
+  Refresh: Wczytaj ponownie subskrypcje z nową zawartością
+  History Backward: Wróć o jedną stronę
