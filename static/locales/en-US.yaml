@@ -823,7 +823,6 @@ Video:
   Reverse Playlist: Reverse Playlist
   Play Next Video: Play Next Video
   Play Previous Video: Play Previous Video
-  Pause on Current Video: Pause on Current Video
   Watched: Watched
   Autoplay: Autoplay
   Starting soon, please refresh the page to check again: Starting soon, please refresh
@@ -1118,6 +1117,7 @@ checkmark: ✓
 Display Label: '{label}: {value}'
 KeyboardShortcutTemplate: '{label} ({shortcut})'
 shortcutJoinOperator: +
+shortcutLabelSeparator: '｜'
 Keys:
   alt: Alt
   ctrl: Ctrl
