@@ -632,6 +632,8 @@ function runApp() {
     }
   }
 
+  const ROOT_APP_URL = process.env.NODE_ENV === 'development' ? 'http://localhost:9080' : 'app://bundle/index.html'
+
   async function createWindow(
     {
       replaceMainWindow = true,
@@ -775,18 +777,10 @@ function runApp() {
     }
 
     // load root file/url
-    if (process.env.NODE_ENV === 'development') {
-      let devStartupURL = 'http://localhost:9080'
-      if (windowStartupUrl != null) {
-        devStartupURL = windowStartupUrl
-      }
-      newWindow.loadURL(devStartupURL)
+    if (windowStartupUrl != null) {
+      newWindow.loadURL(windowStartupUrl)
     } else {
-      if (windowStartupUrl != null) {
-        newWindow.loadURL(windowStartupUrl)
-      } else {
-        newWindow.loadURL('app://bundle/index.html')
-      }
+      newWindow.loadURL(ROOT_APP_URL)
     }
 
     if (typeof searchQueryText === 'string' && searchQueryText.length > 0) {
@@ -982,6 +976,18 @@ function runApp() {
     return app.getPath('pictures')
   })
 
+  // Allows programmatic toggling of fullscreen without accompanying user interaction.
+  // See: https://developer.mozilla.org/en-US/docs/Web/Security/User_activation#transient_activation
+  ipcMain.on(IpcChannels.REQUEST_FULLSCREEN, ({ sender }) => {
+    sender.executeJavaScript('document.querySelector("video.player").ui.getControls().toggleFullScreen()', true)
+  })
+
+  // Allows programmatic toggling of picture-in-picture mode without accompanying user interaction.
+  // See: https://developer.mozilla.org/en-US/docs/Web/Security/User_activation#transient_activation
+  ipcMain.on(IpcChannels.REQUEST_PIP, ({ sender }) => {
+    sender.executeJavaScript('document.querySelector("video.player").ui.getControls().togglePiP()', true)
+  })
+
   ipcMain.handle(IpcChannels.SHOW_OPEN_DIALOG, async ({ sender }, options) => {
     const senderWindow = findSenderWindow(sender)
     if (senderWindow) {
@@ -1012,12 +1018,39 @@ function runApp() {
     return powerSaveBlocker.start('prevent-display-sleep')
   })
 
-  ipcMain.on(IpcChannels.CREATE_NEW_WINDOW, (_e, { windowStartupUrl = null, searchQueryText = null } = { }) => {
+  ipcMain.on(IpcChannels.CREATE_NEW_WINDOW, (event, path, query, searchQueryText) => {
+    if (!isFreeTubeUrl(event.senderFrame.url)) {
+      return
+    }
+
+    if (path == null && query == null && searchQueryText == null) {
+      createWindow({ replaceMainWindow: false, showWindowNow: true })
+      return
+    }
+
+    if (
+      typeof path !== 'string' ||
+      (query != null && typeof query !== 'object') ||
+      (searchQueryText != null && typeof searchQueryText !== 'string')
+    ) {
+      return
+    }
+
+    if (path.charAt(0) !== '/') {
+      path = `/${path}`
+    }
+
+    let windowStartupUrl = `${ROOT_APP_URL}#${path}`
+
+    if (query) {
+      windowStartupUrl += '?' + new URLSearchParams(query).toString()
+    }
+
     createWindow({
       replaceMainWindow: false,
       showWindowNow: true,
-      windowStartupUrl: windowStartupUrl,
-      searchQueryText: searchQueryText
+      windowStartupUrl,
+      searchQueryText
     })
   })
 
@@ -1333,9 +1366,12 @@ function runApp() {
           return null
 
         case DBActions.PLAYLISTS.DELETE_VIDEO_IDS:
-          await baseHandlers.playlists.deleteVideoIdsByPlaylistId(data._id, data.videoIds)
-          // TODO: Syncing (implement only when it starts being used)
-          // syncOtherWindows(IpcChannels.SYNC_PLAYLISTS, event, { event: '_', data })
+          await baseHandlers.playlists.deleteVideoIdsByPlaylistId(data._id, data.playlistItemIds)
+          syncOtherWindows(
+            IpcChannels.SYNC_PLAYLISTS,
+            event,
+            { event: SyncEvents.PLAYLISTS.DELETE_VIDEOS, data }
+          )
           return null
 
         case DBActions.PLAYLISTS.DELETE_ALL_VIDEOS:

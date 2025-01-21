@@ -25,6 +25,19 @@ class Settings {
       await this.upsert('externalPlayerCustomArgs', newValue)
     }
 
+    // In FreeTube 0.23.0, the "Enable Theatre Mode by Default" setting was incoporated as an option
+    // of the "Default Viewing Mode" setting. This is a one time migration to preserve users'
+    // Theater Mode preference through this change.
+    const defaultTheatreMode = await db.settings.findOneAsync({ _id: 'defaultTheatreMode' })
+
+    if (defaultTheatreMode) {
+      if (defaultTheatreMode.value) {
+        await this.upsert('defaultViewingMode', 'theatre')
+      }
+
+      await db.settings.removeAsync({ _id: 'defaultTheatreMode' })
+    }
+
     return db.settings.findAsync({ _id: { $ne: 'bounds' } })
   }
 
@@ -201,10 +214,10 @@ class Playlists {
     }
   }
 
-  static deleteVideoIdsByPlaylistId(_id, videoIds) {
+  static deleteVideoIdsByPlaylistId(_id, playlistItemIds) {
     return db.playlists.updateAsync(
       { _id },
-      { $pull: { videos: { videoId: { $in: videoIds } } } },
+      { $pull: { videos: { playlistItemId: { $in: playlistItemIds } } } },
       { upsert: true }
     )
   }
