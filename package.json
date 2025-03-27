@@ -2,7 +2,7 @@
   "name": "freetube",
   "productName": "FreeTube",
   "description": "A private YouTube client",
-  "version": "0.23.2",
+  "version": "0.23.3",
   "license": "AGPL-3.0-or-later",
   "main": "./dist/main.js",
   "private": true,
@@ -51,7 +51,7 @@
     "postinstall": "run-s --silent rebuild:electron patch-shaka",
     "rebuild:electron": "electron-builder install-app-deps",
     "release": "run-s test build",
-    "ci": "yarn install --silent --frozen-lockfile"
+    "ci": "yarn install --silent --frozen-lockfile --network-concurrency 1"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",
@@ -74,7 +74,7 @@
     "vue-observe-visibility": "^1.0.0",
     "vue-router": "^3.6.5",
     "vuex": "^3.6.2",
-    "youtubei.js": "^13.1.0"
+    "youtubei.js": "^13.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.26.10",
