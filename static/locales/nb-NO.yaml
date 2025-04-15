@@ -1,8 +1,5 @@
 # Put the name of your locale in the same language
 Locale Name: 'Norsk bokmål'
-# Currently on Subscriptions, Playlists, and History
-'This part of the app is not ready yet. Come back later when progress has been made.': >-
-  Denne delen av programmet er ikke klart enda. Kom tilbake senere når ting er i orden.
 
 # Webkit Menu Bar
 File: 'Fil'
@@ -775,7 +772,7 @@ Channel:
     votes: '{votes} stemmer'
     View Full Post: Se hele innlegget
     Video hidden by FreeTube: Video skjult av FreeTube
-    Viewing Posts Only Supported By Invidious: Vise innlegg er bare stølttet av Invidious.
+    Viewing Posts Only Supported By Invidious: Innlegg kan bare vises gjennom Invidious.
       Gå til kanalens fellesskapside for å se innholdet der uten Invidious.
     Reveal Answers: Vis svar
   Shorts:
@@ -818,15 +815,15 @@ Video:
   Live Chat is currently not supported in this build.: 'Direktechat støttes ikke i
     denne versjonen.'
   Live chat is enabled. Chat messages will appear here once sent.: 'Direktechat er
-    påslått. Meldinger vil vises her når de er sendt.'
+    påslått.  Meldinger vil vises her når de er sendt.'
   'Live Chat is currently not supported with the Invidious API. A direct connection to YouTube is required.': 'Direktechat
     støttes for tiden ikke med Invidious-API-et. Direkte tilkobling til YouTube kreves.'
   Published:
     In less than a minute: Om mindre enn ett minutt
   Published on: 'Publisert'
 #& Videos
-  audio only: Bare lyd
-  video only: Bare video
+  audio only: bare lyd
+  video only: bare video
   Download Video: Last ned video
   Video has been saved: Videoen har blitt lagret
   Save Video: Lagre video
@@ -837,9 +834,9 @@ Video:
   Starting soon, please refresh the page to check again: Starter snart. Oppdater siden
     for å sjekke igjen
   Autoplay: Automatisk avspilling
-  Shuffle Playlist: Spill av tilfeldig fra spillelisten
+  Shuffle Playlist: Spill av spillelisten i tilfeldig rekkefølge
   Loop Playlist: Gjenta spilleliste
-  Open Channel in Invidious: Opne kanal i Invidious
+  Open Channel in Invidious: Åpne kanal i Invidious
   Copy YouTube Channel Link: Kopier YouTube-kanallenke
   Video has been removed from your saved list: Videoen har blitt fjernet fra din liste
     over lagrede videoer
@@ -847,12 +844,12 @@ Video:
   Play Previous Video: Spill av forrige video
   Play Next Video: Spill av neste video
   Sponsor Block category:
-    interaction: samhandling
-    outro: utgang
+    interaction: Samhandling
+    outro: Outro
     intro: introduksjon
     sponsor: sponsor
-    music offtopic: musikk (utenfor tema)
-    self-promotion: egenpromotering
+    music offtopic: Musikkfritt segment
+    self-promotion: Egenpromotering
     recap: Oppsummering
     filler: Fyllstoff
   External Player:
@@ -861,16 +858,16 @@ Video:
       opening specific video in a playlist (falling back to opening the video): åpning
         av spesifikk video i en spilleliste (faller tilbake til åpning av videoen)
       opening playlists: åpning av spillelister
-      setting a playback rate: setting av avspillingstakt
+      setting a playback rate: setting av avspillingshastighet
       starting video at offset: starting av video med forskyvning
       looping playlists: gjentakelse av spillelister
       reversing playlists: reversering av spillelister
     UnsupportedActionTemplate: '{externalPlayer} støtter ikke: {action}'
-    OpeningTemplate: Åpner {videoOrPlaylist} om {externalPlayer} …
+    OpeningTemplate: Åpner {videoOrPlaylist} i {externalPlayer} …
     playlist: spilleliste
     video: video
     OpenInTemplate: Åpne i {externalPlayer}
-  Show Super Chat Comment: Vis supersludringskommentar
+  Show Super Chat Comment: Vis superchatkommentar
   Scroll to Bottom: Rull til bunnen
   Premieres: Première
   Upcoming: Kommende
@@ -880,10 +877,10 @@ Video:
   Player:
     Take Screenshot: Ta et skjermbilde
     Stats:
-      Video ID: 'Video ID: {videoId}'
+      Video ID: 'Video-ID: {videoId}'
       Media Formats: 'Medieformater: {formats}'
       Buffered: 'Bufret: {bufferedPercentage}%'
-      Volume: 'Dataområde: {volumePercentage}%'
+      Volume: 'Lydstyrke: {volumePercentage}%'
       Resolution: 'Oppløsning: {width}x{height}@{frameRate}'
       Stats: Statistikk
       CodecAudio: 'Kodek: {audioCodec} ({audioItag})'
@@ -891,8 +888,8 @@ Video:
       Player Dimensions: 'Avspillerdimensjoner: {width}x{height}'
       CodecsVideoAudioNoItags: 'Kodeker: {videoCodec} / {audioCodec}'
       Bandwidth: 'Båndbredde: {bandwidth} kbps'
-      Dropped Frames / Total Frames: 'Tapte rammer: {droppedFrames} / Totale rammer:
-        {totalFrames}'
+      Dropped Frames / Total Frames: 'Tapte bilder: {droppedFrames} / Totale antall
+        bilder: {totalFrames}'
       Bitrate: 'Bitrate: {bitrate} kbps'
     Audio Tracks: Lydspor
     Show Stats: Vis statistikk
@@ -900,11 +897,11 @@ Video:
     Hide Stats: Skjul statistikk
     Full Window: Fullt vindu
     TranslatedCaptionTemplate: '{language} (Oversatt fra "{originalLanguage}")'
-    Skipped segment: Hoppet over {segmentCategory} segment
+    Skipped segment: Hoppet over {segmentCategory}-segment
     Autoplay is on: Automatisk avspilling er slått på
-    Exit Full Window: Forlat fullskjerm
+    Exit Full Window: Avslutt fullskjerm
     Autoplay is off: Automatisk avspilling er slått av
-    Exit Theatre Mode: Forlat teatermodus
+    Exit Theatre Mode: Avslutt teatermodus
     Playback will resume automatically when your connection comes back: Avspilling
       vil fortsette automatisk når din tilkobling kommer tilbake.
     You appear to be offline: Du ser ut til å være frakoblet.
@@ -913,15 +910,20 @@ Video:
   More Options: Flere valg
   Hide Channel: Skjul kanal
   AgeRestricted: Videoer med aldersbegrensning kan ikke bli sett med FreeTube ettersom
-    det krever en Google pålogging og at man bruker en YouTube bruker med verifisert
+    det kreves en Google-pålogging og at man bruker en YouTube-bruker med verifisert
     alder.
   MembersOnly: Videoer kun for medlemmer kan ikke bli sett med FreeTube ettersom de
-    krever en Google pålogging og betalt medlemsskap i opplasterens kanal.
+    krever en Google-pålogging og et betalt medlemsskap i opplasterens kanal.
   IP block: YouTube har blokkert din IP adresse fra å se videoer. Prøv å bytte til
-    en annen VPN eller Proxy.
-  DRMProtected: DRM beskyttede videoer kan ikke bli avspilt i FreeTube, ettersom det
-    krever proprietære komponenter med lukket kildekode. Gå til den offisielle YouTube
-    nettsiden i en DRM aktivert nettleser for å spille av denne videoen.
+    en annen VPN eller mellomtjener.
+  DRMProtected: Kopibeskyttede videoer kan ikke bli avspilt i FreeTube, ettersom det
+    krever proprietære komponenter med lukket kildekode. Gå til den offisielle YouTube-nettsiden
+    i en støttet nettleser for å spille av denne videoen.
+  Save Watched Progress: Lagre sted i videoen
+  Watched Progress Saved: Sted i videoen lagret
+  DeArrow:
+    Show Modified Details: Vis endrede detaljer
+    Show Original Details: Vis originaldetaljer
 Playlist:
   #& About
   View Full Playlist: 'Vis full spilleliste'
@@ -933,16 +935,16 @@ Playlist:
   Playlist: Spilleliste
   Sort By:
     PublishedNewest: Siste publisert først
-    AuthorAscending: Forfatter (A-Z)
-    VideoDurationDescending: Varighet (Lengst først)
+    AuthorAscending: Forfatter (A-Å)
+    VideoDurationDescending: Varighet (Lengste først)
     PublishedOldest: Tidligste publisert først
     DateAddedNewest: Siste lagt til først
-    VideoTitleAscending: Tittel (A-Z)
+    VideoTitleAscending: Tittel (A-Å)
     DateAddedOldest: Tidligste lagt til først
-    AuthorDescending: Forfatter (Z-A)
-    VideoTitleDescending: Tittel (Z-A)
+    AuthorDescending: Forfatter (Å-A)
+    VideoTitleDescending: Tittel (Å-A)
     Custom: Tilpasset
-    VideoDurationAscending: Varighet (Kortest først)
+    VideoDurationAscending: Varighet (Korteste først)
 Change Format:
   Change Media Formats: 'Endre videoformater'
   Use Dash Formats: 'Bruk DASH-formater'
@@ -963,7 +965,7 @@ Share:
   Open Embed: 'Åpne innebyggingslenke'
   # On Click
   Invidious URL copied to clipboard: 'Invidious-nettadresse kopiert til utklippstavle'
-  Invidious Embed URL copied to clipboard: 'Innebyggingslenke for Invidious kopiert
+  Invidious Embed URL copied to clipboard: 'Innebyggingslenke til Invidious kopiert
     til utklippstavle'
   YouTube URL copied to clipboard: 'YouTube-nettadresse kopiert til utklippstavle'
   YouTube Embed URL copied to clipboard: 'Innebygd YouTube-nettadresse kopiert til
@@ -977,21 +979,21 @@ Mini Player: 'Miniavspiller'
 Comments:
   Comments: 'Kommentarer'
   Click to View Comments: 'Klikk her for å vise kommentarer'
-  Getting comment replies, please wait: 'Henter kommentarsvar …'
+  Getting comment replies, please wait: 'Henter kommentarsvar...'
   Hide Comments: 'Skjul kommentarer'
   # Context: View 10 Replies, View 1 Reply
   View: 'Vis'
   Hide: 'Skjul'
   Replies: 'Svar'
   Reply: 'Svar'
-  There are no comments available for this video: 'Det er ingen kommentarer tilgjengelige
+  There are no comments available for this video: 'Det er ingen kommentarer tilgjengelig
     på denne videoen'
   Load More Comments: 'Last inn flere kommentarer'
   Newest first: Nyeste først
-  There are no more comments for this video: Ingen flere kommentarer for denne videoen
+  There are no more comments for this video: Ingen flere kommentarer på denne videoen
   Top comments: Toppkommentarer
   Show More Replies: Vis flere svar
-  From {channelName}: Fra {channelName}
+  From {channelName}: fra {channelName}
   Pinned by: Festet av
   Member: Medlem
   And others: og andre
@@ -1160,6 +1162,7 @@ Chapters:
     Nåværende kapittel: {chapterName}'
   'Chapters list hidden, current chapter: {chapterName}': 'Kapittelliste skjult. Nåværende
     kapittel: {chapterName}'
+  Key Moments: Høydepunkter
 Screenshot Success: Lagre skjermavbildning som «{filePath}»
 Screenshot Error: Skjermavbildning mislyktes. {error}
 Ok: OK
