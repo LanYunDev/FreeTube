@@ -57,13 +57,12 @@ Options:
 
 function runApp() {
   /** @type {Set<string>} */
-  let ALLOWED_RENDERER_FILES
+  const ALLOWED_RENDERER_FILES = process.env.NODE_ENV === 'production'
+    // __FREETUBE_ALLOWED_PATHS__ is replaced by the injectAllowedPaths.mjs script
+    ? new Set(__FREETUBE_ALLOWED_PATHS__)
+    : new Set()
 
   if (process.env.NODE_ENV === 'production') {
-    // __FREETUBE_ALLOWED_PATHS__ is replaced by the injectAllowedPaths.mjs script
-    // eslint-disable-next-line no-undef
-    ALLOWED_RENDERER_FILES = new Set(__FREETUBE_ALLOWED_PATHS__)
-
     protocol.registerSchemesAsPrivileged([{
       scheme: 'app',
       privileges: {
@@ -751,8 +750,7 @@ function runApp() {
       darkTheme: nativeTheme.shouldUseDarkColors,
       icon: process.env.NODE_ENV === 'development'
         ? path.join(__dirname, '../../_icons/iconColor.png')
-        /* eslint-disable-next-line n/no-path-concat */
-        : `${__dirname}/_icons/iconColor.png`,
+        : path.join(__dirname, '../_icons/iconColor.png'),
       autoHideMenuBar: true,
       // useContentSize: true,
       webPreferences: {
